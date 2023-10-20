@@ -567,7 +567,7 @@
                 const response = await fetch(`${host}/api/conversations/messages/?conversation_id=${conversationId}`, requestOptions);
                 const messagesResponse = await response.json();
                 const messages = messagesResponse.data;
-                messages.forEach(message => {
+                messages.reverse().forEach(message => {
                     const author = message.profileId === profile_id ? "me" : "you";
                     if(!message.content && message.attachments.length) {
 
